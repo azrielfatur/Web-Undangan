@@ -3,9 +3,9 @@
         <div class="tw-relative">
             <img src="img/16436960169351.png" class="tw-w-full tw-h-screen tw-object-cover" alt="Background">
             <div class="tw-absolute tw-top-96 lg:tw-top-80 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
-                <div class="tw-text-lg tw-font-thin">The Wedding Of</div>
-                <div class="tw-font-qwigley tw-text-9xl">Eva & Fian</div>
-                <div class="tw-text-lg tw-font-thin">27 . 04 . 2022</div>
+                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">The Wedding Of</div>
+                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-9xl">Eva & Fian</div>
+                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">27 . 04 . 2022</div>
             </div>
         </div>
 
