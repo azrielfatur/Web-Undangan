@@ -9,7 +9,7 @@
             </div>
         </div>
 
-        <div class="tw-px-5 lg:tw-px-48 tw-py-10 lg:tw-py-24">
+        <div data-aos="zoom-in" data-aos-duration="1500" class="tw-px-5 lg:tw-px-48 tw-py-10 lg:tw-py-24">
             <div class="tw-flex tw-text-center">
                 <div class="tw-w-36 lg:tw-w-40">
                     <img src="img/bungakiri.png" alt="bungakiri">
@@ -26,21 +26,21 @@
 
     <div class="tw-flex tw-px-5 lg:tw-px-60 tw-py-5">
         <div class="tw-w-full lg:tw-flex tw-justify-between lg:tw-justify-around tw-flex-row tw-space-y-10 lg:tw-space-y-0">
-        <div class="tw-flex tw-flex-col tw-w-full lg:tw-w-52 tw-space-y-5">
-            <img src="img/Bride.png" alt="Bride" class="tw-w-32 lg:tw-w-full tw-mx-auto ">
-            <div class="tw-text-center tw-space-y-2">
-            <p>Winda Ayu Lestari</p>
-            <p class="tw-text-xs lg:tw-text-sm">Putri ketiga Bapak Yulianto & Ibu Fitriyani</p>
-            </div>
-        </div>
+          <div data-aos="fade-right" data-aos-duration="1500" class="tw-flex tw-flex-col tw-w-full lg:tw-w-52 tw-space-y-5">
+              <img src="img/Bride.png" alt="Bride" class="tw-w-32 lg:tw-w-full tw-mx-auto ">
+              <div class="tw-text-center tw-space-y-2">
+              <p>Winda Ayu Lestari</p>
+              <p class="tw-text-xs lg:tw-text-sm">Putri ketiga Bapak Yulianto & Ibu Fitriyani</p>
+              </div>
+          </div>
 
-        <div class="tw-flex tw-flex-col tw-w-full md:tw-w-52 tw-space-y-5">
-            <img src="img/Groom.png" alt="Groom" class="tw-w-32 lg:tw-w-full tw-mx-auto">
-            <div class="tw-text-center tw-space-y-2">
-            <p>Charisma Vian</p>
-            <p class="tw-text-xs lg:tw-text-sm">Putra pertama Bapak Chairil & Ibu Vanny</p>
-            </div>
-        </div>
+          <div data-aos="fade-left" data-aos-duration="1500" class="tw-flex tw-flex-col tw-w-full md:tw-w-52 tw-space-y-5">
+              <img src="img/Groom.png" alt="Groom" class="tw-w-32 lg:tw-w-full tw-mx-auto">
+              <div class="tw-text-center tw-space-y-2">
+              <p>Charisma Vian</p>
+              <p class="tw-text-xs lg:tw-text-sm">Putra pertama Bapak Chairil & Ibu Vanny</p>
+              </div>
+          </div>
 
         </div>
     </div>
@@ -49,9 +49,9 @@
         <img src="img/Awan.png" alt="Awan" class="tw-hidden lg:tw-block">
         <img src="img/Awan2.png" alt="Awan" class="tw-block tw-h-96 lg:tw-hidden">
         <div class="tw-absolute tw-top-60 lg:tw-top-60 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-center">
-            <div class="tw-font-light tw-text-sm">SAVE THE DAY</div>
-            <div class="tw-text-4xl lg:tw-text-7xl tw-font-qwigley">27 Maret 2022</div>
-            <div class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-10 lg:tw-space-x-5 tw-mt-5 lg:tw-mt-10">
+            <div data-aos="fade-down" data-aos-duration="1500" class="tw-font-light tw-text-sm">SAVE THE DAY</div>
+            <div data-aos="fade-down" data-aos-duration="1500" class="tw-text-4xl lg:tw-text-7xl tw-font-qwigley">27 Maret 2022</div>
+            <div data-aos="fade-up" data-aos-duration="1500" class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-10 lg:tw-space-x-5 tw-mt-5 lg:tw-mt-10">
                 <div class="tw-flex tw-flex-col tw-text-center">
                     <div class="tw-text-4xl lg:tw-text-6xl">25</div>
                     <div class="tw-text-xs tw-font-light">Hari</div>
@@ -74,7 +74,7 @@
 
     <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-0 tw-gap-y-10 lg:tw-gap-0 lg:tw-gap-x-20 tw-px-5 lg:tw-px-60 tw-py-10">
 
-        <div class="tw-flex tw-flex-col tw-px-4 lg:tw-px-6 tw-py-4 lg:tw-py-6 tw-border tw-text-center tw-rounded-lg">
+        <div data-aos="flip-left" data-aos-duration="1500" class="tw-flex tw-flex-col tw-px-4 lg:tw-px-6 tw-py-4 lg:tw-py-6 tw-border tw-text-center tw-rounded-lg">
         <p class="tw-font-qwigley tw-text-5xl">Pemberkatan</p>
         <div class="tw-mt-7 tw-space-y-3 tw-text-base">
             <p>-- 27 Maret 2022 --</p>
@@ -91,7 +91,7 @@
         </div>
         </div>
 
-        <div class="tw-flex tw-flex-col tw-px-4 tw-py-4 lg:tw-px-6 lg:tw-py-6 tw-border tw-text-center tw-rounded-lg">
+        <div data-aos="flip-right" data-aos-duration="1500" class="tw-flex tw-flex-col tw-px-4 tw-py-4 lg:tw-px-6 lg:tw-py-6 tw-border tw-text-center tw-rounded-lg">
         <p class="tw-font-qwigley tw-text-5xl">Resepsi</p>
         <div class="tw-mt-7 tw-space-y-3 tw-text-base">
             <p>-- 27 Maret 2022 --</p>
@@ -111,27 +111,27 @@
     </div>
 
     <div class="tw-px-5 lg:tw-px-52 tw-py-10 lg:tw-py-20">
-        <div class="tw-text-center tw-px-5 lg:tw-px-10 tw-space-y-3">
-        <p class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Cerita Kita</p>
-        <p class="tw-text-xs lg:tw-text-sm tw-font-light">Banyak cerita yang kami lalui sehingga akhirnya kami bisa bersatu, cerita yang akan kami kenang selalu, dan cerita itu kami bagi untuk anda.</p>
+        <div data-aos="slide-up" data-aos-duration="1500" class="tw-text-center tw-px-5 lg:tw-px-10 tw-space-y-3">
+          <p class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Cerita Kita</p>
+          <p class="tw-text-xs lg:tw-text-sm tw-font-light">Banyak cerita yang kami lalui sehingga akhirnya kami bisa bersatu, cerita yang akan kami kenang selalu, dan cerita itu kami bagi untuk anda.</p>
         </div>
 
         <div class="tw-mt-14 lg:tw-mt-28">
         <q-timeline :layout="layout" color="secondary">
-            <q-timeline-entry class="tw-text-lg lg:tw-text-xl" title="Pertama Kali Berjumpa" subtitle="20 Maret 2019" side="left">
-            <div class="tw-text-xs lg:tw-text-sm lg:tw-text-right tw-font-light">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-            </div>
+            <q-timeline-entry data-aos="slide-right" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pertama Kali Berjumpa" subtitle="20 Maret 2019" side="left">
+              <div class="tw-text-xs lg:tw-text-sm lg:tw-text-right tw-font-light">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+              </div>
             </q-timeline-entry>
-            <q-timeline-entry class="tw-text-lg lg:tw-text-xl" title="Pertunangan Kami" subtitle="19 Desember 2021" side="right">
-            <div class="tw-text-xs lg:tw-text-sm tw-text-left tw-font-light">
-                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.
-            </div>
+            <q-timeline-entry data-aos="slide-left" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pertunangan Kami" subtitle="19 Desember 2021" side="right">
+              <div class="tw-text-xs lg:tw-text-sm tw-text-left tw-font-light">
+                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.
+              </div>
             </q-timeline-entry>
-            <q-timeline-entry class="tw-text-lg lg:tw-text-xl" title="Pernikahan Kami" subtitle="24 Maret 2022" side="left">
-            <div class="tw-text-xs lg:tw-text-sm lg:tw-text-right tw-font-light">
-                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
-            </div>
+            <q-timeline-entry data-aos="slide-up" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pernikahan Kami" subtitle="24 Maret 2022" side="left">
+              <div class="tw-text-xs lg:tw-text-sm lg:tw-text-right tw-font-light">
+                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+              </div>
             </q-timeline-entry>
         </q-timeline>
         </div>
@@ -141,43 +141,43 @@
         <img src="img/Vidio.png" alt="" class="tw-hidden lg:tw-block">
         <img src="img/Vidio2.png" alt="" class="tw-block lg:tw-hidden">
         <div class="tw-absolute tw-top-40 lg:tw-top-80 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2">
-        <p class="tw-text-6xl lg:tw-text-8xl tw-font-qwigley tw-text-white tw-text-center">Video Kami</p>
-        <!-- <div class="tw-hidden lg:tw-block">
-            <iframe class="tw-rounded-xl" width="500" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-        </div>
-        <div class="tw-block lg:tw-hidden">
-            <iframe class="tw-rounded-xl" width="260" height="150" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
-        </div> -->
-            <div class="tw-hidden lg:tw-block">
-                <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="600" height="315" allow="autoplay"></iframe>
-            </div>
-            <div class="tw-block lg:tw-hidden">
-                <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="260" height="150" allow="autoplay"></iframe>
-            </div>
+          <p data-aos="fade-down" data-aos-duration="1500" class="tw-text-6xl lg:tw-text-8xl tw-font-qwigley tw-text-white tw-text-center">Video Kami</p>
+          <!-- <div class="tw-hidden lg:tw-block">
+              <iframe class="tw-rounded-xl" width="500" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+          </div>
+          <div class="tw-block lg:tw-hidden">
+              <iframe class="tw-rounded-xl" width="260" height="150" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+          </div> -->
+              <div data-aos="fade-up" data-aos-duration="1500" class="tw-hidden lg:tw-block">
+                  <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="600" height="315" allow="autoplay"></iframe>
+              </div>
+              <div data-aos="fade-up" data-aos-duration="1500" class="tw-block lg:tw-hidden">
+                  <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="260" height="150" allow="autoplay"></iframe>
+              </div>
         </div>
     </div>
 
     <div class="tw-px-5 lg:tw-px-32 tw-py-10 tw-text-center">
-        <p class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Gallery Foto</p>
+        <p data-aos="flip-left" data-aos-duration="1500" class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Gallery Foto</p>
         <div class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-5 tw-mt-10">
-        <div v-for="x in Gallery" :key="x">
-            <img :src="x.Url" alt="">
-        </div>
+          <div data-aos="fade-down" data-aos-duration="1500" v-for="x in Gallery" :key="x">
+              <img :src="x.Url" alt="">
+          </div>
         </div>
 
         <div class="tw-grid lg:tw-grid-cols-2 tw-gap-5 tw-mt-5">
-        <div v-for="x in Y" :key="x">
-            <img :src="x.Url" alt="">
-        </div>
+          <div data-aos="fade-up" data-aos-duration="1500" v-for="x in Y" :key="x">
+              <img :src="x.Url" alt="">
+          </div>
         </div>
 
         <div class="lg:tw-flex tw-gap-5 tw-mt-5">
-            <div class="tw-flex-1 tw-grid tw-grid-cols-2 tw-gap-5">
+            <div data-aos="fade-right" data-aos-duration="1500" class="tw-flex-1 tw-grid tw-grid-cols-2 tw-gap-5">
                 <div v-for="x in Z" :key="x">
                 <img :src="x.Url" alt="">
                 </div>
             </div>
-            <div class="tw-flex-1 tw-mt-5 lg:tw-mt-0">
+            <div data-aos="fade-left" data-aos-duration="1500" class="tw-flex-1 tw-mt-5 lg:tw-mt-0">
                 <div class="">
                 <img src="img/c.png" alt="">
                 </div>
@@ -200,16 +200,16 @@
     </div>
 
     <div class="tw-px-5 lg:tw-px-32 tw-text-center tw-my-20">
-        <p class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Berikan Hadiah</p>
+        <p data-aos="zoom-in-down" data-aos-duration="1500" class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Berikan Hadiah</p>
         <div class="tw-px-8 tw-py-8 tw-border">
-            <q-img src="img/qr_code_bca.jpeg" class="tw-w-72"/>
+            <q-img data-aos="zoom-in" data-aos-duration="1500" src="img/qr_code_bca.jpeg" class="tw-w-72"/>
         </div>
     </div>
 
     <div class="tw-px-5 lg:tw-px-32 tw-py-10 lg:tw-py-20">
-        <p class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Konfirmasi Kehadiran</p>
-        <p class="tw-text-xs lg:tw-text-sm tw-font-light">Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai. Atas kehadiran serta doa restu, kami ucapkan terima kasih.</p>
-        <div class="tw-px-8 tw-py-8 lg:tw-px-16 lg:tw-py-12 tw-border tw-mt-10 tw-rounded-lg">
+        <p data-aos="zoom-out" data-aos-duration="1500" class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Konfirmasi Kehadiran</p>
+        <p data-aos="zoom-out" data-aos-duration="1500" class="tw-text-xs lg:tw-text-sm tw-font-light">Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kedua mempelai. Atas kehadiran serta doa restu, kami ucapkan terima kasih.</p>
+        <div data-aos="fade-down" data-aos-duration="1500" class="tw-px-8 tw-py-8 lg:tw-px-16 lg:tw-py-12 tw-border tw-mt-10 tw-rounded-lg">
         <form @submit.prevent="" class="tw-full tw-space-y-6">
             <div class="tw-flex tw-flex-col lg:tw-flex-row tw-flex-wrap tw--mx-3 tw-space-x-0 tw-space-y-5 lg:tw-space-y-0 lg:tw-space-x-5">
             <div class="tw-flex-1">
@@ -254,8 +254,8 @@
     </div>
 
     <div class="tw-px-5 lg:tw-px-32 tw-py-10">
-        <p class="tw-font-qwigley tw-text-7xl tw-text-center lg:tw-text-left">Katakan Sesuatu</p>
-        <div class="tw-px-8 tw-py-8 lg:tw-px-16 lg:tw-py-12 tw-border tw-mt-10 tw-rounded-lg">
+        <p data-aos="zoom-out" data-aos-duration="1500" class="tw-font-qwigley tw-text-7xl tw-text-center lg:tw-text-left">Katakan Sesuatu</p>
+        <div data-aos="fade-down" data-aos-duration="1500" class="tw-px-8 tw-py-8 lg:tw-px-16 lg:tw-py-12 tw-border tw-mt-10 tw-rounded-lg">
         <form @submit.prevent="" class="tw-full tw-space-y-6">
             <div class="tw-flex tw-flex-row tw-space-x-5">
             <div class="tw-flex-1 tw-space-y-8">
