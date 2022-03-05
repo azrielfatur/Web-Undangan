@@ -1,10 +1,31 @@
 <template>
+<<<<<<< HEAD
     <q-layout view="hHh lpR fFf" class="tw-font-poppins tw-overflow-x-hidden">
+=======
+    <q-layout view="hHh lpR fFf" class="tw-font-poppins">
+                
+        <q-dialog v-model="SpecialInvited" persistent>
+            <q-card class="tw-w-96 tw-text-center tw-font-poppins">
+                <img src="img/SpecialInvited.png">
+                <div class="tw-absolute tw-w-full tw-top-1/2 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2">
+                    <div class="tw-text-sm">Kepada Yth.</div>
+                    <div class="tw-text-2xl tw-font-medium tw-py-2">Danang Suprianto</div>
+                    <div class="tw-text-sm">Ditempat</div>
+                    <q-btn dense unelevated no-caps class="tw-bg-gray-700 tw-text-white tw-text-sm tw-font-light tw-px-5 tw-py-2 tw-mt-5" @click="playMusic">Buka Undangan</q-btn>
+                </div>
+            </q-card>
+        </q-dialog>
+
+        <div class="tw-fixed tw-z-50 tw-bottom-5 tw-right-5">
+            <q-btn class="tw-py-2 tw-px-4 tw-bg-gray-100" unelevated :icon="PlayingAudio ? 'music_note' : 'music_off'" @click.prevent="PlayingAudio ? pauseMusic(Audio) : playMusic(Audio) "/>
+        </div>
+
+>>>>>>> 616d644fb2087ce0a1fc2b8113e381691388244c
         <div class="tw-relative">
             <img src="img/16436960169351.png" class="tw-w-full tw-h-screen tw-object-cover" alt="Background">
             <div class="tw-absolute tw-top-96 lg:tw-top-80 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">The Wedding Of</div>
-                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-9xl">Eva & Fian</div>
+                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-9xl">Eva & Vian</div>
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">27 . 04 . 2022</div>
             </div>
         </div>
@@ -29,16 +50,16 @@
           <div data-aos="fade-right" data-aos-duration="1500" class="tw-flex tw-flex-col tw-w-full lg:tw-w-52 tw-space-y-5">
               <img src="img/Bride.png" alt="Bride" class="tw-w-32 lg:tw-w-full tw-mx-auto ">
               <div class="tw-text-center tw-space-y-2">
-              <p>Winda Ayu Lestari</p>
-              <p class="tw-text-xs lg:tw-text-sm">Putri ketiga Bapak Yulianto & Ibu Fitriyani</p>
+              <p>Eva Oktaviana</p>
+              <p class="tw-text-xs lg:tw-text-sm">Putri Kedua Bapak Nasirudin & Ibu Rusmina</p>
               </div>
           </div>
 
           <div data-aos="fade-left" data-aos-duration="1500" class="tw-flex tw-flex-col tw-w-full md:tw-w-52 tw-space-y-5">
               <img src="img/Groom.png" alt="Groom" class="tw-w-32 lg:tw-w-full tw-mx-auto">
               <div class="tw-text-center tw-space-y-2">
-              <p>Charisma Vian</p>
-              <p class="tw-text-xs lg:tw-text-sm">Putra pertama Bapak Chairil & Ibu Vanny</p>
+              <p>Charisma Vian Geslianto </p>
+              <p class="tw-text-xs lg:tw-text-sm">Putra Pertama Alm Bapak Paidi & Ibu Yutini Soleka</p>
               </div>
           </div>
 
@@ -343,21 +364,38 @@ const Z = [
 ]
 
 export default defineComponent({
-  setup() {
-    const $q = useQuasar()
-    return {
-      Name: ref(''),
-      Ucapan: ref(''),
-      Jumlah: ref(null),
-      Pesan: ref(''),
-      Konfirmasi: ref(''),
-      Gallery,
-      Y,
-      Z,
-      layout: computed(() => {
-        return $q.screen.lt.sm ? 'dense' : ($q.screen.lt.md ? 'comfortable' : 'loose')
-      })
-    }
-  },
+    setup() {
+        const $q = useQuasar()
+        return {
+            SpecialInvited: ref(true),
+            PlayingAudio: ref(false),
+            Audio: ref('music/Paul Anka  Put Your Head on My Shoulder Cover by The Macarons Project.mp3'),
+
+            Name: ref(''),
+            Ucapan: ref(''),
+            Jumlah: ref(null),
+            Pesan: ref(''),
+            Konfirmasi: ref(''),
+            Gallery,
+            Y,
+            Z,
+            layout: computed(() => {
+                return $q.screen.lt.sm ? 'dense' : ($q.screen.lt.md ? 'comfortable' : 'loose')
+            })
+        }
+    },
+    methods: {
+        playMusic() {
+            this.SpecialInvited = false
+            this.PlayingAudio = true
+            let audio = new Audio(this.Audio)
+            audio.play()
+        },
+        pauseMusic() {
+            this.PlayingAudio = false
+            var audio = new Audio(this.Audio)
+            audio.pause()
+        }
+    },
 })
 </script>
