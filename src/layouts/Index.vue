@@ -1,9 +1,5 @@
 <template>
-<<<<<<< HEAD
     <q-layout view="hHh lpR fFf" class="tw-font-poppins tw-overflow-x-hidden">
-=======
-    <q-layout view="hHh lpR fFf" class="tw-font-poppins">
-                
         <q-dialog v-model="SpecialInvited" persistent>
             <q-card class="tw-w-96 tw-text-center tw-font-poppins">
                 <img src="img/SpecialInvited.png">
@@ -19,8 +15,6 @@
         <div class="tw-fixed tw-z-50 tw-bottom-5 tw-right-5">
             <q-btn class="tw-py-2 tw-px-4 tw-bg-gray-100" unelevated :icon="PlayingAudio ? 'music_note' : 'music_off'" @click.prevent="PlayingAudio ? pauseMusic(Audio) : playMusic(Audio) "/>
         </div>
-
->>>>>>> 616d644fb2087ce0a1fc2b8113e381691388244c
         <div class="tw-relative">
             <img src="img/16436960169351.png" class="tw-w-full tw-h-screen tw-object-cover" alt="Background">
             <div class="tw-absolute tw-top-96 lg:tw-top-80 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
@@ -243,7 +237,7 @@
                 <label class="tw-block tw-tracking-wide tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2">
                     Jumlah Orang
                 </label>
-                <q-input filled v-model="Jumlah" type="text" placeholder="Jumlah Orang" class="tw-text-xs" />
+                <q-select dense filled v-model="Jumlah" type="text" :options="[{label: '1 Orang', value: 1}, {label: '2 Orang', value: 2}]" placeholder="Jumlah Orang" class="tw-text-xs" />
             </div>
             </div>
 
@@ -267,7 +261,7 @@
                 <q-radio size="sm" v-model="Konfirmasi" val="Maaf, saya tidak bisa hadir" label="Maaf, saya tidak bisa hadir" />
             </div>
             </div>
-            <button class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded-sm tw-text-white tw-bg-gray-600">
+            <button class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded-sm tw-text-white tw-bg-gray-600" @click="savePresence">
             Kirim
             </button>
         </form>
@@ -284,7 +278,7 @@
                 <label class="tw-block tw-tracking-wide tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2">
                     Name
                 </label>
-                <q-input filled v-model="Name" type="text" placeholder="Name" class="tw-text-xs" />
+                <q-input filled v-model="GivingName" type="text" placeholder="Name" class="tw-text-xs" />
                 </div>
                 <div>
                 <label class="tw-block tw-tracking-wide tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2">
@@ -292,7 +286,7 @@
                 </label>
                 <q-input filled v-model="Ucapan" type="textarea" placeholder="Ucapan" class="tw-text-xs" />
                 </div>
-                <button class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded-sm tw-text-white tw-bg-gray-600">
+                <button class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded-sm tw-text-white tw-bg-gray-600" @click="saveOutGiving">
                 Kirim
                 </button>
             </div>
@@ -303,17 +297,21 @@
         </form>
 
         </div>
-        <!-- <div class="tw-px-8 tw-py-8 lg:tw-px-16 lg:tw-py-12 tw-border tw-mt-10 tw-rounded-lg"> -->
-            <div class="tw-flex tw-flex-row tw-space-x-5 tw-mt-10">
+        <div v-if="OutGivings.length > 0">
+            <div v-for="og in OutGivings" :key="og.id" class="tw-flex tw-flex-row tw-space-x-5 tw-mt-10">
                 <div>
                     <img src="img/Ellipse 9.svg" alt="">
                 </div>
                 <div class="tw-w-full tw-px-3 lg:tw-px-7 tw-text-xs lg:tw-text-sm tw-py-3 tw-bg-gray-100 tw-space-y-3 tw-rounded-lg">
-                    <p class="tw-font-semibold">Fauzi Hidayat</p>
-                    <div class="tw-text-xs tw-font-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </div>
+                    <p class="tw-font-semibold">{{ og.name }}</p>
+                    <div class="tw-text-xs tw-font-light">{{ og.message }} </div>
                 </div>
             </div>
-        <!-- </div> -->
+        </div>
+
+        <div v-else>
+            <!-- Kalo gak ada data -->
+        </div>
     </div>
 
 
@@ -367,11 +365,13 @@ export default defineComponent({
     setup() {
         const $q = useQuasar()
         return {
+            OutGivings: ref([]),
             SpecialInvited: ref(true),
             PlayingAudio: ref(false),
             Audio: ref('music/Paul Anka  Put Your Head on My Shoulder Cover by The Macarons Project.mp3'),
 
             Name: ref(''),
+            GivingName: ref(''),
             Ucapan: ref(''),
             Jumlah: ref(null),
             Pesan: ref(''),
@@ -384,6 +384,9 @@ export default defineComponent({
             })
         }
     },
+    mounted() {
+        this.getOutGiving()
+    },
     methods: {
         playMusic() {
             this.SpecialInvited = false
@@ -395,6 +398,40 @@ export default defineComponent({
             this.PlayingAudio = false
             var audio = new Audio(this.Audio)
             audio.pause()
+        },
+        getOutGiving() {
+            let vm = this
+
+            vm.$api.get('/outgivings').then((ress) => {
+                vm.OutGivings = ress.data
+            })
+        },
+
+        savePresence() {
+            let vm = this
+            let data = {
+                "name": this.Name,
+                "num_of_people": this.Jumlah.value,
+                "confirmation": this.Konfirmasi,
+                "message": this.Pesan
+            }
+
+            vm.$api.post('/presences', data).then((ress) => {
+                console.log(ress)
+                vm.getOutGiving()
+            })
+        },
+
+        saveOutGiving() {
+            let vm = this
+            let data = {
+                "name": this.GivingName,
+                "message": this.Ucapan
+            }
+
+            vm.$api.post('/outgivings', data).then((ress) => {
+                console.log(ress)
+            })
         }
     },
 })
