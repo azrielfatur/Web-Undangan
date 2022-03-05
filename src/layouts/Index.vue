@@ -1,5 +1,5 @@
 <template>
-    <q-layout view="hHh lpR fFf" class="tw-font-poppins">
+    <q-layout view="hHh lpR fFf" class="tw-font-poppins tw-overflow-x-hidden">
         <div class="tw-relative">
             <img src="img/16436960169351.png" class="tw-w-full tw-h-screen tw-object-cover" alt="Background">
             <div class="tw-absolute tw-top-96 lg:tw-top-80 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
@@ -148,12 +148,12 @@
           <div class="tw-block lg:tw-hidden">
               <iframe class="tw-rounded-xl" width="260" height="150" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
           </div> -->
-              <div data-aos="fade-up" data-aos-duration="1500" class="tw-hidden lg:tw-block">
+              <!-- <div data-aos="fade-up" data-aos-duration="1500" class="tw-hidden lg:tw-block">
                   <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="600" height="315" allow="autoplay"></iframe>
               </div>
               <div data-aos="fade-up" data-aos-duration="1500" class="tw-block lg:tw-hidden">
                   <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="260" height="150" allow="autoplay"></iframe>
-              </div>
+              </div> -->
         </div>
     </div>
 
