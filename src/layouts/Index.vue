@@ -16,10 +16,11 @@
             <q-btn class="tw-py-2 tw-px-4 tw-bg-gray-100" unelevated :icon="PlayingAudio ? 'music_note' : 'music_off'" @click.prevent="PlayingAudio ? pauseMusic(Audio) : playMusic(Audio) "/>
         </div>
         <div class="tw-relative">
-            <img src="img/16436960169351.png" class="tw-w-full tw-h-screen tw-object-cover" alt="Background">
-            <div class="tw-absolute tw-top-96 lg:tw-top-80 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
+            <img src="img/16436960169351.png" class="tw-w-full tw-hidden lg:tw-block tw-h-screen tw-object-cover" alt="Background">
+            <img src="img/cover-mobile.webp" class="tw-w-full tw-block lg:tw-hidden tw-h-screen tw-object-cover" alt="Background">
+            <div class="tw-absolute tw-mt-10 lg:tw-mt-0 tw-top-52 lg:tw-top-72 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">The Wedding Of</div>
-                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-9xl">Eva & Vian</div>
+                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-8xl lg:tw-text-8xl">Eva <br> & <br> Vian</div>
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">27 . 04 . 2022</div>
             </div>
         </div>
@@ -45,7 +46,7 @@
               <img src="img/Bride.png" alt="Bride" class="tw-w-32 lg:tw-w-full tw-mx-auto ">
               <div class="tw-text-center tw-space-y-2">
               <p>Eva Oktaviana</p>
-              <p class="tw-text-xs lg:tw-text-sm">Putri Kedua Bapak Nasirudin & Ibu Rusmina</p>
+              <p class="tw-text-xs lg:tw-text-sm">Putri Kedua Bapak Nasirudin & Ibu Rusmina Simbolon</p>
               </div>
           </div>
 
@@ -66,51 +67,57 @@
         <div class="tw-absolute tw-top-60 lg:tw-top-60 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-center">
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-font-light tw-text-sm">SAVE THE DAY</div>
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-text-4xl lg:tw-text-7xl tw-font-qwigley">27 Maret 2022</div>
-            <div data-aos="fade-up" data-aos-duration="1500" class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-10 lg:tw-space-x-5 tw-mt-5 lg:tw-mt-10">
-                <div class="tw-flex tw-flex-col tw-text-center">
-                    <div class="tw-text-4xl lg:tw-text-6xl">25</div>
-                    <div class="tw-text-xs tw-font-light">Hari</div>
-                </div>
-                <div class="tw-flex tw-flex-col tw-text-center">
-                    <div class="tw-text-4xl lg:tw-text-6xl">09</div>
-                    <div class="tw-text-xs tw-font-light">Jam</div>
-                </div>
-                <div class="tw-flex tw-flex-col tw-text-center">
-                    <div class="tw-text-4xl lg:tw-text-6xl">12</div>
-                    <div class="tw-text-xs tw-font-light">Menit</div>
-                </div>
-                <div class="tw-flex tw-flex-col tw-text-center">
-                    <div class="tw-text-4xl lg:tw-text-6xl">52</div>
-                    <div class="tw-text-xs tw-font-light">Detik</div>
-                </div>
-            </div>
+                <vue-countdown :time="23 * 24 * 60 * 60 * 1000" v-slot="{ days, hours, minutes, seconds }">
+                    <div data-aos="fade-up" data-aos-duration="1500" class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-10 lg:tw-space-x-5 tw-mt-5 lg:tw-mt-10">
+
+                        <div class="tw-flex tw-flex-col tw-text-center">
+                            <div class="tw-text-4xl lg:tw-text-6xl">{{days}}</div>
+                            <div class="tw-text-xs tw-font-light">Hari</div>
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-text-center">
+                            <div class="tw-text-4xl lg:tw-text-6xl">{{hours}}</div>
+                            <div class="tw-text-xs tw-font-light">Jam</div>
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-text-center">
+                            <div class="tw-text-4xl lg:tw-text-6xl">{{minutes}}</div>
+                            <div class="tw-text-xs tw-font-light">Menit</div>
+                        </div>
+                        <div class="tw-flex tw-flex-col tw-text-center">
+                            <div class="tw-text-4xl lg:tw-text-6xl">{{seconds}}</div>
+                            <div class="tw-text-xs tw-font-light">Detik</div>
+                        </div>
+                    </div>
+                </vue-countdown>
         </div>
     </div>
 
     <div class="tw-grid tw-grid-cols-1 lg:tw-grid-cols-2 tw-gap-x-0 tw-gap-y-10 lg:tw-gap-0 lg:tw-gap-x-20 tw-px-5 lg:tw-px-60 tw-py-10">
 
-        <div data-aos="flip-left" data-aos-duration="1500" class="tw-flex tw-flex-col tw-px-4 lg:tw-px-6 tw-py-4 lg:tw-py-6 tw-border tw-text-center tw-rounded-lg">
-        <p class="tw-font-qwigley tw-text-5xl">Pemberkatan</p>
-        <div class="tw-mt-7 tw-space-y-3 tw-text-base">
-            <p>-- 27 Maret 2022 --</p>
-            <p>Pukul 10:00 - Selesai</p>
-        </div>
-        <div class="tw-mt-10 tw-space-y-2">
-            <p class="tw-font-semibold tw-font-ubuntu tw-text-base">Gereja Masehi Advent Hari Ketujuh Jemaat Salatiga</p>
-            <p class="tw-font-light tw-text-sm">Jl. Hasanudin No.100, Dukuh, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50724</p>
-        </div>
-        <div class="tw-flex tw-justify-center tw-mt-20">
-            <a href="https://maps.app.goo.gl/RKjWjSjrwMzW5dYn6">
-            <div class="tw-w-max tw-px-5 tw-py-2 tw-rounded-md tw-bg-black tw-text-white">Buka Lokasi</div>
-            </a>
-        </div>
+        <div data-aos="flip-left" data-aos-duration="1500" class="tw-h-max tw-flex tw-flex-col tw-px-4 lg:tw-px-6 tw-py-4 lg:tw-py-6 tw-border tw-text-center tw-rounded-lg">
+            <p class="tw-font-qwigley tw-text-5xl">Pemberkatan</p>
+            <div class="tw-mt-7 tw-space-y-3 tw-text-base">
+                <p>-- 27 Maret 2022 --</p>
+                <p>Pukul 09:00 - 11.00</p>
+            </div>
+            <div class="tw-mt-10 tw-space-y-2">
+                <p class="tw-font-semibold tw-font-ubuntu tw-text-base">Gereja Masehi Advent Hari Ketujuh Jemaat Salatiga</p>
+                <p class="tw-font-light tw-text-sm">Jl. Hasanudin No.100, Dukuh, Kec. Sidomukti, Kota Salatiga, Jawa Tengah 50724</p>
+            </div>
+            <div class="tw-flex tw-justify-center tw-mt-20">
+                <a href="https://maps.app.goo.gl/RKjWjSjrwMzW5dYn6">
+                    <div class="tw-w-max tw-px-5 tw-py-2 tw-rounded-md tw-bg-black tw-text-white">Buka Lokasi</div>
+                </a>
+            </div>
         </div>
 
         <div data-aos="flip-right" data-aos-duration="1500" class="tw-flex tw-flex-col tw-px-4 tw-py-4 lg:tw-px-6 lg:tw-py-6 tw-border tw-text-center tw-rounded-lg">
         <p class="tw-font-qwigley tw-text-5xl">Resepsi</p>
         <div class="tw-mt-7 tw-space-y-3 tw-text-base">
             <p>-- 27 Maret 2022 --</p>
-            <p>Pukul 15:00 - Selesai</p>
+            <p class="tw-font-semibold">Sesi 1</p>
+            <p>Pukul 12:00 - 13.00</p>
+            <p class="tw-font-semibold">Sesi 2</p>
+            <p>Pukul 13:00 - 14.00</p>
         </div>
         <div class="tw-mt-10 tw-space-y-2">
             <p class="tw-font-semibold tw-font-ubuntu tw-text-base">Joglo Ki Penjawi</p>
@@ -118,7 +125,7 @@
         </div>
         <div class="tw-flex tw-justify-center tw-mt-20">
             <a href="https://maps.app.goo.gl/quqSdroLEcsq8Gax5">
-            <div class="tw-w-max tw-px-5 tw-py-2 tw-rounded-md tw-bg-black tw-text-white">Buka Lokasi</div>
+                <div class="tw-w-max tw-px-5 tw-py-2 tw-rounded-md tw-bg-black tw-text-white">Buka Lokasi</div>
             </a>
         </div>
         </div>
@@ -133,19 +140,20 @@
 
         <div class="tw-mt-14 lg:tw-mt-28">
         <q-timeline :layout="layout" color="secondary">
-            <q-timeline-entry data-aos="slide-right" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pertama Kali Berjumpa" subtitle="20 Maret 2019" side="left">
+            <q-timeline-entry data-aos="slide-right" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pertama Kali Berjumpa" subtitle="15 Febuari 2019" side="left">
               <div class="tw-text-xs lg:tw-text-sm lg:tw-text-right tw-font-light">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                  <!-- Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s -->
+                    Bak cerita-cerita sinetron. Kami berjumpa di depan Lift Apartemen, saat itu lah cinta pada pandangan pertama terjadi. Siapa yang menduga cerita dongeng seperti itu bisa menjadi awal kisah cinta kami.
               </div>
             </q-timeline-entry>
-            <q-timeline-entry data-aos="slide-left" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pertunangan Kami" subtitle="19 Desember 2021" side="right">
+            <q-timeline-entry data-aos="slide-left" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pertunangan Kami" subtitle="26 Desember 2021" side="right">
               <div class="tw-text-xs lg:tw-text-sm tw-text-left tw-font-light">
-                  It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has.
+                  Setelah 2 tahun menjalani masa pendekatan dan saling mengenal. Kami memutuskan sudah waktunya kita melanjutkan ke jenjang yang lebih serius.
               </div>
             </q-timeline-entry>
-            <q-timeline-entry data-aos="slide-up" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pernikahan Kami" subtitle="24 Maret 2022" side="left">
+            <q-timeline-entry data-aos="slide-up" data-aos-duration="1500" class="tw-text-lg lg:tw-text-xl" title="Pernikahan Kami" subtitle="27 Maret 2022" side="left">
               <div class="tw-text-xs lg:tw-text-sm lg:tw-text-right tw-font-light">
-                  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour
+                  The world is full of lonely people afraid to make the first move. Its my first move and she said YES. Fuck yeah! We're getting married!
               </div>
             </q-timeline-entry>
         </q-timeline>
@@ -163,12 +171,12 @@
           <div class="tw-block lg:tw-hidden">
               <iframe class="tw-rounded-xl" width="260" height="150" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
           </div> -->
-              <!-- <div data-aos="fade-up" data-aos-duration="1500" class="tw-hidden lg:tw-block">
+              <div data-aos="fade-up" data-aos-duration="1500" class="tw-hidden lg:tw-block">
                   <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="600" height="315" allow="autoplay"></iframe>
               </div>
               <div data-aos="fade-up" data-aos-duration="1500" class="tw-block lg:tw-hidden">
                   <iframe src="https://drive.google.com/file/d/1FKIsVpla-pBHOVIMQk59xW1biQJWyjDc/preview" width="260" height="150" allow="autoplay"></iframe>
-              </div> -->
+              </div>
         </div>
     </div>
 
@@ -250,16 +258,16 @@
                 <q-input filled v-model="Pesan" type="textarea" placeholder="Pesan" class="tw-text-xs" />
             </div>
             </div>
-
             <div class="tw-flex tw-flex-col tw--mx-3">
-            <label class="tw-block tw-tracking-wide tw-text-gray-700 tw-text-sm tw-font-bold tw-mb-2">
-                Konfirmasi Kehadiran
-            </label>
-            <div class="tw-flex tw-flex-col tw-text-xs">
-                <q-radio size="sm" v-model="Konfirmasi" val="Hadir" label="Hadir" />
-                <q-radio size="sm" v-model="Konfirmasi" val="Saya tidak yakin" label="Saya tidak yakin" />
-                <q-radio size="sm" v-model="Konfirmasi" val="Maaf, saya tidak bisa hadir" label="Maaf, saya tidak bisa hadir" />
-            </div>
+                <label class="tw-block tw-tracking-wide tw-text-gray-700 tw-text-sm tw-font-bold tw-mb-2">
+                    Konfirmasi Kehadiran
+                </label>
+                <div class="tw-flex tw-flex-col tw-text-xs">
+                    <q-radio size="sm" v-model="Konfirmasi" val="Hadir resepsi sesi 1" label="Hadir resepsi sesi 1" />
+                    <q-radio size="sm" v-model="Konfirmasi" val="Hadir resepsi sesi 2" label="Hadir resepsi sesi 2" />
+                    <q-radio size="sm" v-model="Konfirmasi" val="Saya tidak yakin" label="Saya tidak yakin" />
+                    <q-radio size="sm" v-model="Konfirmasi" val="Maaf, saya tidak bisa hadir" label="Maaf, saya tidak bisa hadir" />
+                </div>
             </div>
             <button class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded-sm tw-text-white tw-bg-gray-600" @click="savePresence">
             Kirim
@@ -328,6 +336,8 @@ import { computed, defineComponent, ref } from 'vue'
 
 import { useQuasar } from 'quasar'
 
+import VueCountdown from '@chenfengyuan/vue-countdown';
+
 const Gallery = [
   {
     Url: 'img/img1.png'
@@ -362,6 +372,10 @@ const Z = [
 ]
 
 export default defineComponent({
+    name: 'index',
+    components: {
+        VueCountdown
+    },
     setup() {
         const $q = useQuasar()
         return {
@@ -376,6 +390,7 @@ export default defineComponent({
             Jumlah: ref(null),
             Pesan: ref(''),
             Konfirmasi: ref(''),
+            Sesi: ref(''),
             Gallery,
             Y,
             Z,
