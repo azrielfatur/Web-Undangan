@@ -182,44 +182,11 @@
 
     <div class="tw-px-5 lg:tw-px-32 tw-py-10 tw-text-center">
         <p data-aos="flip-left" data-aos-duration="1500" class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Gallery Foto</p>
-        <div class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-5 tw-mt-10">
-          <div data-aos="fade-down" data-aos-duration="1500" v-for="x in Gallery" :key="x">
-              <img :src="x.Url" alt="">
+        <div class="tw-grid lg:tw-grid-cols-4 tw-gap-5 tw-mt-10">
+          <div data-aos="fade-down" data-aos-duration="1500" v-for="x in Gallery" :key="x" :class="x.Class">
+              <img :src="x.Path" alt="" class="tw-h-full tw-rounded-lg">
           </div>
         </div>
-
-        <div class="tw-grid lg:tw-grid-cols-2 tw-gap-5 tw-mt-5">
-          <div data-aos="fade-up" data-aos-duration="1500" v-for="x in Y" :key="x">
-              <img :src="x.Url" alt="">
-          </div>
-        </div>
-
-        <div class="lg:tw-flex tw-gap-5 tw-mt-5">
-            <div data-aos="fade-right" data-aos-duration="1500" class="tw-flex-1 tw-grid tw-grid-cols-2 tw-gap-5">
-                <div v-for="x in Z" :key="x">
-                <img :src="x.Url" alt="">
-                </div>
-            </div>
-            <div data-aos="fade-left" data-aos-duration="1500" class="tw-flex-1 tw-mt-5 lg:tw-mt-0">
-                <div class="">
-                <img src="img/c.png" alt="">
-                </div>
-            </div>
-        </div>
-
-        <!-- <div class="tw-grid tw-grid-cols-2 tw-gap-x-5 tw-mt-5">
-        <div>
-            <div v-for="x in Z" :key="x">
-            <img :src="x.Url" alt="">
-            </div>
-        </div>
-
-        <div>
-            <div>
-            <img src="img/c.png" alt="">
-            </div>
-        </div>
-        </div> -->
     </div>
 
     <div class="tw-px-5 lg:tw-px-32 tw-text-center tw-my-20">
@@ -338,37 +305,71 @@ import { useQuasar } from 'quasar'
 import VueCountdown from '@chenfengyuan/vue-countdown';
 
 const Gallery = [
-  {
-    Url: 'img/img1.png'
-  },
-  {
-    Url: 'img/img2.png'
-  },
-  {
-    Url: 'img/img3.png'
-  },
-  {
-    Url: 'img/img4.png'
-  },
+    {
+        Path: 'img/gallery/1643696033423.webp',
+        Class: 'tw-col-span-2'
+    },
+    {
+        Path: 'img/gallery/1643696358694.webp',
+        Class: ''
+    },
+    {
+        Path: 'img/gallery/1643696028833.webp',
+        Class: ''
+    },
+    {
+        Path: 'img/gallery/1643696071192.webp',
+        Class: 'tw-col-span-2'
+    },
+    {
+        Path: 'img/gallery/1643696118457.webp',
+        Class: 'tw-col-span-2'
+    },
+    {
+        Path: 'img/gallery/1643696175112.webp',
+        Class: ''
+    },
+    {
+        Path: 'img/gallery/1643648479608.webp',
+        Class: ''
+    },
+    {
+        Path: 'img/gallery/1643648932211.webp',
+        Class: 'tw-col-span-2'
+    }
 ]
+// const Gallery = [
+//   {
+//     Url: 'img/gallery/1643648932211.webp'
+//   },
+//   {
+//     Url: 'img/img2.png'
+//   },
+//   {
+//     Url: 'img/img3.png'
+//   },
+//   {
+//     Url: 'img/gallery/1643648479608.webp'
+//   },
+// ]
 
-const Y = [
-  {
-    Url: 'img/1643696033423 1.png'
-  },
-  {
-    Url: 'img/1643648384220 (1) 1.png'
-  }
-]
+// const Y = [
+//   {
+//     Url: 'img/1643696033423 1.png'
+//   },
+//   {
+//     Url: 'img/1643648384220 (1) 1.png'
+//   }
+// ]
 
-const Z = [
-  {
-    Url: 'img/a.png'
-  },
-  {
-    Url: 'img/b.png'
-  },
-]
+// const Z = [
+//   {
+//     Url: 'img/a.png'
+//   },
+//   {
+//     Url: 'img/b.png'
+//   },
+// ]
 
 const Now = new Date()
 const MarriageDate = new Date("2022-03-27")
@@ -396,8 +397,6 @@ export default defineComponent({
             Konfirmasi: ref(''),
             Sesi: ref(''),
             Gallery,
-            Y,
-            Z,
             layout: computed(() => {
                 return $q.screen.lt.sm ? 'dense' : ($q.screen.lt.md ? 'comfortable' : 'loose')
             })
