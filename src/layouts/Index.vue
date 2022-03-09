@@ -5,7 +5,7 @@
                 <img src="img/SpecialInvited.png">
                 <div class="tw-absolute tw-w-full tw-top-1/2 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2">
                     <div class="tw-text-sm">Kepada Yth.</div>
-                    <div class="tw-text-2xl tw-font-medium tw-py-2">Danang Suprianto</div>
+                    <div class="tw-text-2xl tw-font-medium tw-py-2">{{ PersonInvited }}</div>
                     <div class="tw-text-sm">Ditempat</div>
                     <q-btn dense unelevated no-caps class="tw-bg-gray-700 tw-text-white tw-text-sm tw-font-light tw-px-5 tw-py-2 tw-mt-5" @click="playMusic">Buka Undangan</q-btn>
                 </div>
@@ -381,6 +381,7 @@ export default defineComponent({
     setup() {
         const $q = useQuasar()
         return {
+            PersonInvited: ref(),
             TheDate: ref(MarriageDate - Now),
             OutGivings: ref([]),
             SpecialInvited: ref(false),
@@ -403,20 +404,31 @@ export default defineComponent({
         }
     },
     mounted() {
+        this.getInvited()
         this.getOutGiving()
     },
     methods: {
+        getInvited() {
+            let param = this.$route.query.to
+            
+            if (param) {
+                this.PersonInvited = param
+                this.SpecialInvited = true
+            }                
+        },
         playMusic() {
             this.SpecialInvited = false
             this.PlayingAudio = true
             let audio = new Audio(this.Audio)
             audio.play()
         },
+
         pauseMusic() {
             this.PlayingAudio = false
             var audio = new Audio(this.Audio)
             audio.pause()
         },
+        
         getOutGiving() {
             let vm = this
 
