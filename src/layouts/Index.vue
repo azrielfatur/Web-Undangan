@@ -67,11 +67,11 @@
         <div class="tw-absolute tw-top-60 lg:tw-top-60 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-center">
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-font-light tw-text-sm">SAVE THE DAY</div>
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-text-4xl lg:tw-text-7xl tw-font-qwigley">27 Maret 2022</div>
-                <vue-countdown :time="23 * 24 * 60 * 60 * 1000" v-slot="{ days, hours, minutes, seconds }">
+                <vue-countdown :time="TheDate" :interval="100" v-slot="{ days, hours, minutes, seconds }">
                     <div data-aos="fade-up" data-aos-duration="1500" class="tw-grid tw-grid-cols-2 lg:tw-grid-cols-4 tw-gap-10 lg:tw-space-x-5 tw-mt-5 lg:tw-mt-10">
 
                         <div class="tw-flex tw-flex-col tw-text-center">
-                            <div class="tw-text-4xl lg:tw-text-6xl">{{days}}</div>
+                            <div class="tw-text-4xl lg:tw-text-6xl">{{ days }}</div>
                             <div class="tw-text-xs tw-font-light">Hari</div>
                         </div>
                         <div class="tw-flex tw-flex-col tw-text-center">
@@ -306,15 +306,14 @@
 
         </div>
         <div v-if="OutGivings.length > 0">
-            <div v-for="og in OutGivings" :key="og.id" class="tw-flex tw-flex-row tw-space-x-5 tw-mt-10">
-                <div>
-                    <img src="img/Ellipse 9.svg" alt="">
+            <q-scroll-area  class="tw-h-96 tw-mt-10 tw-pb-2">
+                <div v-for="og in OutGivings" :key="og.id" class="tw-flex tw-flex-row tw-px-5 tw-py-2">
+                    <div class="tw-w-full tw-px-3 lg:tw-px-7 tw-text-xs lg:tw-text-sm tw-py-3 tw-bg-gray-100 tw-space-y-3 tw-rounded-lg">
+                        <p class="tw-font-semibold">{{ og.name }}</p>
+                        <div class="tw-text-xs tw-font-light">{{ og.message }} </div>
+                    </div>
                 </div>
-                <div class="tw-w-full tw-px-3 lg:tw-px-7 tw-text-xs lg:tw-text-sm tw-py-3 tw-bg-gray-100 tw-space-y-3 tw-rounded-lg">
-                    <p class="tw-font-semibold">{{ og.name }}</p>
-                    <div class="tw-text-xs tw-font-light">{{ og.message }} </div>
-                </div>
-            </div>
+            </q-scroll-area>
         </div>
 
         <div v-else>
@@ -371,6 +370,9 @@ const Z = [
   },
 ]
 
+const Now = new Date()
+const MarriageDate = new Date("2022-03-27")
+
 export default defineComponent({
     name: 'index',
     components: {
@@ -379,8 +381,9 @@ export default defineComponent({
     setup() {
         const $q = useQuasar()
         return {
+            TheDate: ref(MarriageDate - Now),
             OutGivings: ref([]),
-            SpecialInvited: ref(true),
+            SpecialInvited: ref(false),
             PlayingAudio: ref(false),
             Audio: ref('music/Paul Anka  Put Your Head on My Shoulder Cover by The Macarons Project.mp3'),
 
