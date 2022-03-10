@@ -193,7 +193,7 @@
         <p data-aos="zoom-in-down" data-aos-duration="1500" class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Berikan Hadiah</p>
         <div class="tw-px-8 tw-py-8 tw-border">
             <q-img data-aos="zoom-in" data-aos-duration="1500" src="img/qr_code_bca.jpeg" class="tw-w-72"/>
-            <div class="tw-text-xl  tw-mt-8">4770202863</div>
+            <div class="tw-text-xl  tw-mt-8">BCA - 4770202863</div>
         </div>
     </div>
 
@@ -377,11 +377,9 @@ export default defineComponent({
     methods: {
         getInvited() {
             let param = this.$route.query.to
-            let split = param.split("-").join(" ")
-
-            console.log(split)
             
             if (param) {
+                let split = param.split("-").join(" ")
                 this.PersonInvited = split
                 this.SpecialInvited = true
             }                
