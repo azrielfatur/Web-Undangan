@@ -18,7 +18,7 @@
         <div class="tw-relative">
             <img src="img/16436960169351.png" class="tw-w-full tw-hidden lg:tw-block tw-h-screen tw-object-cover" alt="Vian & Eva">
             <img src="img/cover-mobile.webp" class="tw-w-full tw-block lg:tw-hidden tw-h-screen tw-object-cover" alt="Vian & Eva">
-            <div class="tw-absolute tw-mt-10 lg:tw-mt-0 tw-top-52 lg:tw-top-72 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
+            <div class="tw-absolute tw-mt-10 lg:tw-mt-0 tw-top-36 lg:tw-top-72 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">The Wedding Of</div>
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-8xl lg:tw-text-8xl">Eva <br> & <br> Vian</div>
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">27 . 04 . 2022</div>
@@ -377,12 +377,12 @@ export default defineComponent({
     methods: {
         getInvited() {
             let param = this.$route.query.to
-            
+
             if (param) {
                 let split = param.split("-").join(" ")
                 this.PersonInvited = split
                 this.SpecialInvited = true
-            }                
+            }
         },
         playMusic() {
             this.SpecialInvited = false
@@ -394,7 +394,7 @@ export default defineComponent({
             this.PlayingAudio = false
             this.Audio.pause()
         },
-        
+
         getOutGiving() {
             let vm = this
 
