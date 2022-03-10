@@ -13,11 +13,11 @@
         </q-dialog>
 
         <div class="tw-fixed tw-z-50 tw-bottom-5 tw-right-5">
-            <q-btn class="tw-py-2 tw-px-4 tw-bg-gray-100" unelevated :icon="PlayingAudio ? 'music_note' : 'music_off'" @click.prevent="PlayingAudio ? pauseMusic(Audio) : playMusic(Audio) "/>
+            <q-btn class="tw-py-2 tw-px-4 tw-bg-gray-100" unelevated :icon="PlayingAudio ? 'music_off' : 'music_note'" @click.prevent="PlayingAudio ? pauseMusic(Audio) : playMusic(Audio) "/>
         </div>
         <div class="tw-relative">
-            <img src="img/16436960169351.png" class="tw-w-full tw-hidden lg:tw-block tw-h-screen tw-object-cover" alt="Background">
-            <img src="img/cover-mobile.webp" class="tw-w-full tw-block lg:tw-hidden tw-h-screen tw-object-cover" alt="Background">
+            <img src="img/16436960169351.png" class="tw-w-full tw-hidden lg:tw-block tw-h-screen tw-object-cover" alt="Vian & Eva">
+            <img src="img/cover-mobile.webp" class="tw-w-full tw-block lg:tw-hidden tw-h-screen tw-object-cover" alt="Vian & Eva">
             <div class="tw-absolute tw-mt-10 lg:tw-mt-0 tw-top-52 lg:tw-top-72 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">The Wedding Of</div>
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-8xl lg:tw-text-8xl">Eva <br> & <br> Vian</div>
@@ -184,7 +184,7 @@
         <p data-aos="flip-left" data-aos-duration="1500" class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Gallery Foto</p>
         <div class="tw-grid lg:tw-grid-cols-4 tw-gap-5 tw-mt-10">
           <div data-aos="fade-down" data-aos-duration="1500" v-for="x in Gallery" :key="x" :class="x.Class">
-              <img :src="x.Path" alt="" class="tw-h-full tw-rounded-lg">
+              <img :src="x.Path" alt="" class="md:tw-h-full tw-rounded-lg">
           </div>
         </div>
     </div>
@@ -266,7 +266,7 @@
                 </button>
             </div>
             <div class="tw-hidden lg:tw-block tw-flex-1">
-                <img src="img/1643649327582 1.png" alt="" class="tw-mt-7">
+                <img src="img/1643649327582.webp" alt="" class="tw-mt-7">
             </div>
             </div>
         </form>
@@ -338,39 +338,6 @@ const Gallery = [
         Class: 'tw-col-span-2'
     }
 ]
-// const Gallery = [
-//   {
-//     Url: 'img/gallery/1643648932211.webp'
-//   },
-//   {
-//     Url: 'img/img2.png'
-//   },
-//   {
-//     Url: 'img/img3.png'
-//   },
-//   {
-//     Url: 'img/gallery/1643648479608.webp'
-//   },
-// ]
-
-// const Y = [
-//   {
-//     Url: 'img/1643696033423 1.png'
-//   },
-//   {
-//     Url: 'img/1643648384220 (1) 1.png'
-//   }
-// ]
-
-// const Z = [
-//   {
-//     Url: 'img/a.png'
-//   },
-//   {
-//     Url: 'img/b.png'
-//   },
-// ]
-
 const Now = new Date()
 const MarriageDate = new Date("2022-03-27")
 
@@ -387,7 +354,7 @@ export default defineComponent({
             OutGivings: ref([]),
             SpecialInvited: ref(false),
             PlayingAudio: ref(false),
-            Audio: ref('music/Paul Anka  Put Your Head on My Shoulder Cover by The Macarons Project.mp3'),
+            Audio: new Audio('music/Paul Anka  Put Your Head on My Shoulder Cover by The Macarons Project.mp3'),
 
             Name: ref(''),
             GivingName: ref(''),
@@ -418,14 +385,12 @@ export default defineComponent({
         playMusic() {
             this.SpecialInvited = false
             this.PlayingAudio = true
-            let audio = new Audio(this.Audio)
-            audio.play()
+            this.Audio.play()
         },
 
         pauseMusic() {
             this.PlayingAudio = false
-            var audio = new Audio(this.Audio)
-            audio.pause()
+            this.Audio.pause()
         },
         
         getOutGiving() {
