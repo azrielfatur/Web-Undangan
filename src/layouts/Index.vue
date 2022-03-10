@@ -3,9 +3,9 @@
         <q-dialog v-model="SpecialInvited" persistent>
             <q-card class="tw-w-96 tw-text-center tw-font-poppins">
                 <img src="img/SpecialInvited.png">
-                <div class="tw-absolute tw-w-full tw-top-1/2 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2">
+                <div class="tw-absolute tw-w-full tw-top-1/2 tw-left-1/2 tw-h-full tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-py-5">
                     <div class="tw-text-sm">Kepada Yth.</div>
-                    <div class="tw-text-2xl tw-font-medium tw-py-2">{{ PersonInvited }}</div>
+                    <div class="tw-text-2xl tw-font-medium tw-py-2 tw-px-5">{{ PersonInvited }}</div>
                     <div class="tw-text-sm">Ditempat</div>
                     <q-btn dense unelevated no-caps class="tw-bg-gray-700 tw-text-white tw-text-sm tw-font-light tw-px-5 tw-py-2 tw-mt-5" @click="playMusic">Buka Undangan</q-btn>
                 </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="tw-mt-10 tw-space-y-2">
             <p class="tw-font-semibold tw-font-ubuntu tw-text-base">Joglo Ki Penjawi</p>
-            <p class="tw-font-light tw-text-sm">Jl. Pulutan Raya, Pulutan, Singosari Ujung, Kab Semarang</p>
+            <p class="tw-font-light tw-text-sm">Jl. Ki Penjawi No.14, Sidorejo Lor, Kec. Sidorejo, Kota Salatiga, Jawa Tengah 50714</p>
         </div>
         <div class="tw-flex tw-justify-center tw-mt-20">
             <a href="https://maps.app.goo.gl/quqSdroLEcsq8Gax5">
@@ -193,6 +193,7 @@
         <p data-aos="zoom-in-down" data-aos-duration="1500" class="tw-font-qwigley tw-text-5xl lg:tw-text-7xl">Berikan Hadiah</p>
         <div class="tw-px-8 tw-py-8 tw-border">
             <q-img data-aos="zoom-in" data-aos-duration="1500" src="img/qr_code_bca.jpeg" class="tw-w-72"/>
+            <div class="tw-text-xl  tw-mt-8">4770202863</div>
         </div>
     </div>
 
@@ -376,9 +377,12 @@ export default defineComponent({
     methods: {
         getInvited() {
             let param = this.$route.query.to
+            let split = param.split("-").join(" ")
+
+            console.log(split)
             
             if (param) {
-                this.PersonInvited = param
+                this.PersonInvited = split
                 this.SpecialInvited = true
             }                
         },
