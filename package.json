@@ -1,9 +1,9 @@
 {
   "name": "einvite",
   "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
-  "author": "Hikmal Maulana Ramadhan <hikmal.ramadhan@smartfinance.co.id>",
+  "description": "Aplikasi Website Undangan Online Untuk Pernikahan ",
+  "productName": "AnyWedd | Undangan Pernikahan",
+  "author": "HalfHour <halfhour.id@gmail.com>",
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
