@@ -62,8 +62,8 @@
     </div>
 
     <div class="tw-relative tw-text-white tw-py-10 lg:tw-py-20">
-        <img src="img/Awan.png" alt="Awan" class="tw-hidden lg:tw-block">
-        <img src="img/Awan2.png" alt="Awan" class="tw-block tw-h-96 lg:tw-hidden">
+        <img src="img/Awan.png" alt="Awan" class="tw-w-full tw-h-96 tw-object-cover">
+        <!-- <img src="img/Awan2.png" alt="Awan" class="tw-block tw-h-96 lg:tw-hidden"> -->
         <div class="tw-absolute tw-top-60 lg:tw-top-60 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-center">
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-font-light tw-text-sm">SAVE THE DAY</div>
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-text-4xl lg:tw-text-7xl tw-font-qwigley">27 Maret 2022</div>
@@ -237,9 +237,9 @@
                     <q-radio size="sm" v-model="Konfirmasi" val="Maaf, saya tidak bisa hadir" label="Maaf, saya tidak bisa hadir" />
                 </div>
             </div>
-            <button class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded-sm tw-text-white tw-bg-gray-600" @click="savePresence">
+            <q-btn :loading="loadingPresence" unelevated no-caps class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded tw-text-white tw-bg-gray-600" @click="savePresence">
             Kirim
-            </button>
+            </q-btn>
         </form>
         </div>
     </div>
@@ -254,17 +254,17 @@
                 <label class="tw-block tw-tracking-wide tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2">
                     Name
                 </label>
-                <q-input filled v-model="GivingName" type="text" placeholder="Name" class="tw-text-xs" />
+                <q-input dense filled v-model="GivingName" type="text" placeholder="Name" class="tw-text-xs" />
                 </div>
                 <div>
                 <label class="tw-block tw-tracking-wide tw-text-gray-700 tw-text-xs tw-font-bold tw-mb-2">
                     Ucapan
                 </label>
-                <q-input filled v-model="Ucapan" type="textarea" placeholder="Ucapan" class="tw-text-xs" />
+                <q-input dense filled v-model="Ucapan" type="textarea" placeholder="Ucapan" class="tw-text-xs" />
                 </div>
-                <button class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded-sm tw-text-white tw-bg-gray-600" @click="saveOutGiving">
+                <q-btn :loading="loadingOutgiving" unelevated no-caps class="tw-w-full tw-px-16 tw-py-2 tw-text-sm tw-rounded tw-text-white tw-bg-gray-600" @click="saveOutGiving">
                 Kirim
-                </button>
+                </q-btn>
             </div>
             <div class="tw-hidden lg:tw-block tw-flex-1">
                 <img src="img/1643649327582.webp" alt="" class="tw-mt-7">
@@ -275,7 +275,8 @@
         </div>
         <div v-if="OutGivings.length > 0">
             <q-scroll-area  class="tw-h-96 tw-mt-10 tw-pb-2">
-                <div v-for="og in OutGivings" :key="og.id" class="tw-flex tw-flex-row tw-px-5 tw-py-2">
+                <div v-for="og in OutGivings" :key="og.id" class="tw-flex tw-flex-row tw-items-center tw-px-5 tw-py-2 tw-gap-5">
+                    <div><img src="img/avatar.webp" class="tw-w-16"></div>
                     <div class="tw-w-full tw-px-3 lg:tw-px-7 tw-text-xs lg:tw-text-sm tw-py-3 tw-bg-gray-100 tw-space-y-3 tw-rounded-lg">
                         <p class="tw-font-semibold">{{ og.name }}</p>
                         <div class="tw-text-xs tw-font-light">{{ og.message }} </div>
@@ -288,7 +289,6 @@
             <!-- Kalo gak ada data -->
         </div>
     </div>
-
 
     <div class="tw-bg-gray-600 tw-text-white tw-mt-60 tw-py-5 tw-font-light tw-text-center">
         © 2022 anywedd. All Rights Reserved
@@ -367,7 +367,10 @@ export default defineComponent({
             Gallery,
             layout: computed(() => {
                 return $q.screen.lt.sm ? 'dense' : ($q.screen.lt.md ? 'comfortable' : 'loose')
-            })
+            }),
+
+            loadingOutgiving: ref(false),
+            loadingPresence: ref(false)
         }
     },
     mounted() {
@@ -384,6 +387,7 @@ export default defineComponent({
                 this.SpecialInvited = true
             }
         },
+
         playMusic() {
             this.SpecialInvited = false
             this.PlayingAudio = true
@@ -412,21 +416,63 @@ export default defineComponent({
                 "message": this.Pesan
             }
 
+            vm.loadingPresence = true
+
             vm.$api.post('/presences', data).then((ress) => {
-                console.log(ress)
-                vm.getOutGiving()
+                if(ress.status == 201) {
+                    vm.successNotify()
+                    vm.loadingPresence = false
+                    vm.Name = ref('')
+                    vm.Jumlah = ref('')
+                    vm.Pesan = ref('')
+                    vm.Konfirmasi = ref('')
+
+                    vm.getOutGiving()
+                } else {
+                    vm.failedNofity()
+                    vm.loadingPresence = false
+                    vm.Name = ref('')
+                    vm.Jumlah = ref('')
+                    vm.Pesan = ref('')
+                    vm.Konfirmasi = ref('')
+                }
             })
         },
 
         saveOutGiving() {
             let vm = this
             let data = {
-                "name": this.GivingName,
-                "message": this.Ucapan
+                "name": vm.GivingName,
+                "message": vm.Ucapan
             }
 
+            vm.loadingOutgiving = true
+
             vm.$api.post('/outgivings', data).then((ress) => {
-                console.log(ress)
+                if(ress.status == 201) {
+                    vm.successNotify()
+                    vm.loadingOutgiving = false
+                    vm.GivingName = ref('')
+                    vm.Ucapan = ref('')
+                } else {
+                    vm.failedNofity()
+                    vm.loadingOutgiving = false
+                    vm.GivingName = ref('')
+                    vm.Ucapan = ref('')
+                }
+            })
+        },
+
+        successNotify () {
+            this.$q.notify({
+                type: 'positive',
+                message: 'Pesan berhasil dikirim'
+            })
+        },
+        failedNofity() {
+            this.$q.notify({
+                type: 'negative',
+                message: 'Oops! Ada kesalahan. Mohon coba beberapa menit lagi.'
             })
         }
     },
