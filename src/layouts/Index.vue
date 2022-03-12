@@ -301,9 +301,58 @@
 <script>
 import { computed, defineComponent, ref } from 'vue'
 
-import { useQuasar } from 'quasar'
+import { useQuasar, useMeta } from 'quasar'
 
 import VueCountdown from '@chenfengyuan/vue-countdown';
+
+const metaData = {
+  // sets document title
+  title: 'Index Page',
+  // optional; sets final title as "Index Page - My Website", useful for multiple level meta
+  titleTemplate: title => `${title} - My Website`,
+
+  // meta tags
+  meta: {
+        description: { name: 'description', content: 'Undangan Pernikahan Vian & Eva' },
+        keywords: { name: 'keywords', content: 'Website Undangan Online untuk Pernikahan' },
+        equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
+        // note: for Open Graph type metadata you will need to use SSR, to ensure page is rendered by the server
+        ogTitle:  {
+            property: 'og:title',
+            // optional; similar to titleTemplate, but allows templating with other meta properties
+            template (ogTitle) {
+                return `AnyWedd.com`
+            }
+        },
+        ogDesc:  {
+            property: 'og:description',
+            // optional; similar to titleTemplate, but allows templating with other meta properties
+            template (ogDesc) {
+                return `Undangan Pernikahan Vian & Eva`
+            }
+        },
+        ogImg:  {
+            property: 'og:image',
+            // optional; similar to titleTemplate, but allows templating with other meta properties
+            template (ogImg) {
+                return `img/thumbnail.pmg`
+            }
+        },
+        ogType:  {
+            property: 'og:type',
+            // optional; similar to titleTemplate, but allows templating with other meta properties
+            template (ogType) {
+                return `Website`
+            }
+        },
+        ogUrl: {
+            property: 'og:url',
+            template (ogUrl) {
+                return `http://anywedd.com`
+            }
+        }
+    },
+}
 
 const Gallery = [
     {
@@ -348,6 +397,7 @@ export default defineComponent({
         VueCountdown
     },
     setup() {
+        useMeta(metaData)
         const $q = useQuasar()
         return {
             PersonInvited: ref(),
