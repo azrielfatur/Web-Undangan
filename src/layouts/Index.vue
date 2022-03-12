@@ -397,7 +397,15 @@ export default defineComponent({
         VueCountdown
     },
     setup() {
-        useMeta(metaData)
+        useMeta({
+            meta: {
+                description: { name: "description", content: "Undangan Pernikahan Vian & Eva" },
+                ogTitle: { name: "og:title", content: "Undangan Pernikahan Vian & Eva" },
+                ogDescription: { name: "og:description", content: "Undangan Pernikahan Vian & Eva" },
+                ogUrl: { name: "og:url", content: "http://anywedd.com" },
+                ogImage: { name: "og:image", content: "http://anywedd.com/img/thumbnail" },
+            }
+        })
         const $q = useQuasar()
         return {
             PersonInvited: ref(),
