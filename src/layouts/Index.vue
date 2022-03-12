@@ -16,12 +16,12 @@
             <q-btn class="tw-py-2 tw-px-4 tw-bg-gray-100" unelevated :icon="PlayingAudio ? 'music_off' : 'music_note'" @click.prevent="PlayingAudio ? pauseMusic(Audio) : playMusic(Audio) "/>
         </div>
         <div class="tw-relative">
-            <img src="img/16436960169351.png" class="tw-w-full tw-hidden lg:tw-block tw-h-screen tw-object-cover" alt="Vian & Eva">
+            <img src="img/16436960169351.webp" class="tw-w-full tw-hidden lg:tw-block tw-h-screen tw-object-cover" alt="Vian & Eva">
             <img src="img/cover-mobile.webp" class="tw-w-full tw-block lg:tw-hidden tw-h-screen tw-object-cover" alt="Vian & Eva">
             <div class="tw-absolute tw-mt-10 lg:tw-mt-0 tw-top-36 lg:tw-top-72 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-white tw-text-center">
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">The Wedding Of</div>
                 <div data-aos="zoom-in" data-aos-duration="1500" class="tw-font-qwigley tw-text-8xl lg:tw-text-8xl">Eva <br> & <br> Vian</div>
-                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">27 . 04 . 2022</div>
+                <div data-aos="zoom-in" data-aos-duration="1500" class="tw-text-lg tw-font-thin">27 . 03 . 2022</div>
             </div>
         </div>
 
@@ -62,8 +62,8 @@
     </div>
 
     <div class="tw-relative tw-text-white tw-py-10 lg:tw-py-20">
-        <img src="img/Awan.png" alt="Awan" class="tw-w-full tw-h-96 tw-object-cover">
-        <!-- <img src="img/Awan2.png" alt="Awan" class="tw-block tw-h-96 lg:tw-hidden"> -->
+        <img src="img/Awan.png" alt="Awan" class="lg:tw-w-full tw-hidden tw-h-96 tw-object-cover">
+        <img src="img/Awan2.png" alt="Awan" class="tw-w-full tw-h-96 lg:tw-hidden">
         <div class="tw-absolute tw-top-60 lg:tw-top-60 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-center">
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-font-light tw-text-sm">SAVE THE DAY</div>
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-text-4xl lg:tw-text-7xl tw-font-qwigley">27 Maret 2022</div>

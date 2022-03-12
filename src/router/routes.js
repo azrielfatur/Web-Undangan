@@ -5,6 +5,10 @@ const routes = [
     component: () => import('layouts/Index.vue'),
     name: 'index-layouts'
   },
+  {
+    path: '/vian-eva',
+    component: () => import('layouts/Index.vue'),
+  },
 
   // Always leave this as last one,
   // but you can also remove it
