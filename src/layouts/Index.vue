@@ -318,7 +318,7 @@ const metaData = {
         equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
         // note: for Open Graph type metadata you will need to use SSR, to ensure page is rendered by the server
         ogTitle:  {
-            property: 'og:title',
+            property: 'og:site_name',
             // optional; similar to titleTemplate, but allows templating with other meta properties
             template (ogTitle) {
                 return `AnyWedd.com`
@@ -335,7 +335,7 @@ const metaData = {
             property: 'og:image',
             // optional; similar to titleTemplate, but allows templating with other meta properties
             template (ogImg) {
-                return `img/thumbnail.png`
+                return `http://anywedd.com/img/thumbnail.png`
             }
         },
         ogType:  {
