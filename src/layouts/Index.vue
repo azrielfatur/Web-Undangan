@@ -307,9 +307,9 @@ import VueCountdown from '@chenfengyuan/vue-countdown';
 
 const metaData = {
   // sets document title
-  title: 'Index Page',
+  title: 'AnyWedd',
   // optional; sets final title as "Index Page - My Website", useful for multiple level meta
-  titleTemplate: title => `${title} - My Website`,
+  titleTemplate: title => `${title} - Pernikahan Vian & Eva`,
 
   // meta tags
   meta: {
