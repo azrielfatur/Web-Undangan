@@ -335,7 +335,7 @@ const metaData = {
             property: 'og:image',
             // optional; similar to titleTemplate, but allows templating with other meta properties
             template (ogImg) {
-                return `img/thumbnail.pmg`
+                return `img/thumbnail.png`
             }
         },
         ogType:  {
