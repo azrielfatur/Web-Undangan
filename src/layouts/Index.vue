@@ -301,58 +301,9 @@
 <script>
 import { computed, defineComponent, ref } from 'vue'
 
-import { useQuasar, useMeta } from 'quasar'
+import { useQuasar } from 'quasar'
 
 import VueCountdown from '@chenfengyuan/vue-countdown';
-
-const metaData = {
-  // sets document title
-  title: 'AnyWedd',
-  // optional; sets final title as "Index Page - My Website", useful for multiple level meta
-  titleTemplate: title => `${title} - Pernikahan Vian & Eva`,
-
-  // meta tags
-  meta: {
-        description: { name: 'description', content: 'Undangan Pernikahan Vian & Eva' },
-        keywords: { name: 'keywords', content: 'Website Undangan Online untuk Pernikahan' },
-        equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' },
-        // note: for Open Graph type metadata you will need to use SSR, to ensure page is rendered by the server
-        ogTitle:  {
-            property: 'og:site_name',
-            // optional; similar to titleTemplate, but allows templating with other meta properties
-            template (ogTitle) {
-                return `AnyWedd.com`
-            }
-        },
-        ogDesc:  {
-            property: 'og:description',
-            // optional; similar to titleTemplate, but allows templating with other meta properties
-            template (ogDesc) {
-                return `Undangan Pernikahan Vian & Eva`
-            }
-        },
-        ogImg:  {
-            property: 'og:image',
-            // optional; similar to titleTemplate, but allows templating with other meta properties
-            template (ogImg) {
-                return `http://anywedd.com/img/thumbnail.png`
-            }
-        },
-        ogType:  {
-            property: 'og:type',
-            // optional; similar to titleTemplate, but allows templating with other meta properties
-            template (ogType) {
-                return `Website`
-            }
-        },
-        ogUrl: {
-            property: 'og:url',
-            template (ogUrl) {
-                return `http://anywedd.com`
-            }
-        }
-    },
-}
 
 const Gallery = [
     {
@@ -397,15 +348,6 @@ export default defineComponent({
         VueCountdown
     },
     setup() {
-        useMeta({
-            meta: {
-                description: { name: "description", content: "Undangan Pernikahan Vian & Eva" },
-                ogTitle: { name: "og:title", content: "Undangan Pernikahan Vian & Eva" },
-                ogDescription: { name: "og:description", content: "Undangan Pernikahan Vian & Eva" },
-                ogUrl: { name: "og:url", content: "http://anywedd.com" },
-                ogImage: { name: "og:image", content: "http://anywedd.com/img/thumbnail" },
-            }
-        })
         const $q = useQuasar()
         return {
             PersonInvited: ref(),
