@@ -1,11 +1,11 @@
 <template>
     <q-layout view="hHh lpR fFf" class="tw-font-poppins tw-overflow-x-hidden">
         <q-dialog v-model="SpecialInvited" persistent>
-            <q-card class="tw-w-96 tw-text-center tw-font-poppins">
-                <img src="img/SpecialInvited.png">
-                <div class="tw-absolute tw-w-full tw-top-1/2 tw-left-1/2 tw-h-full tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-py-5">
+            <q-card class="tw-w-96 tw-h-56 tw-text-center tw-font-poppins">
+                <img src="img/SpecialInvited.png" class="tw-w-full tw-h-full">
+                <div class="tw-absolute tw-w-full tw-top-1/2 tw-left-1/2 tw-h-full tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-pt-8">
                     <div class="tw-text-sm">Kepada Yth.</div>
-                    <div class="tw-text-2xl tw-font-medium tw-py-2 tw-px-5">{{ PersonInvited }}</div>
+                    <div class="tw-text-xl tw-font-medium tw-py-2 tw-px-5">{{ PersonInvited }}</div>
                     <div class="tw-text-sm">Ditempat</div>
                     <q-btn dense unelevated no-caps class="tw-bg-gray-700 tw-text-white tw-text-sm tw-font-light tw-px-5 tw-py-2 tw-mt-5" @click="playMusic">Buka Undangan</q-btn>
                 </div>
@@ -62,7 +62,7 @@
     </div>
 
     <div class="tw-relative tw-text-white tw-py-10 lg:tw-py-20">
-        <img src="img/Awan.png" alt="Awan" class="lg:tw-w-full tw-hidden tw-h-96 tw-object-cover">
+        <img src="img/Awan.png" alt="Awan" class="lg:tw-w-full tw-hidden lg:tw-block tw-h-96 tw-object-cover">
         <img src="img/Awan2.png" alt="Awan" class="tw-w-full tw-h-96 lg:tw-hidden">
         <div class="tw-absolute tw-top-60 lg:tw-top-60 tw-left-1/2 tw-transform tw--translate-x-1/2 tw--translate-y-1/2 tw-text-center">
             <div data-aos="fade-down" data-aos-duration="1500" class="tw-font-light tw-text-sm">SAVE THE DAY</div>

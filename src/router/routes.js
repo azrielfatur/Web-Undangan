@@ -2,7 +2,7 @@
 const routes = [
   {
     path: '/',
-    component: () => import('pages/ComingSoon.vue'),
+    component: () => import('layouts/Index.vue'),
     name: 'index-layouts'
   },
   {
